@@ -25,6 +25,13 @@ prisma/
 ## Quick start
 
 ```bash
+# Clone the repo
+git clone https://github.com/gulistaneraza01/testing-codingg.git .
+
+# (Alternative) Reset remote to your own repo:
+git remote remove origin
+git remote add origin https://github.com/gulistaneraza01/testing-codingg.git
+
 # 1. Install dependencies
 pnpm install
 
