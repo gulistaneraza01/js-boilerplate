@@ -6,14 +6,14 @@ A reusable Node.js + Express (ES6 modules) backend structure for quick prototype
 
 ```
 src/
-├── config/          # env vars, db connection
+├── config/          # env vars, db connection, swagger spec
 ├── controllers/     # req/res handling only — stays thin
 ├── services/        # business logic lives here
 ├── repositories/     # (empty scaffold) add only if you start unit testing
-├── routes/          # route definitions, mounted in routes/index.js
+├── routes/          # route definitions with @openapi comments, mounted in routes/index.js
 ├── middleware/       # auth, error handling, validation
 ├── validators/       # zod schemas for request validation
-├── utils/            # AppError, logger, asyncHandler
+├── utils/            # AppError, logger, asyncHandler, checkDatabase
 ├── app.js            # express app setup
 └── server.js         # entry point
 
@@ -30,7 +30,7 @@ git clone https://github.com/gulistaneraza01/testing-codingg.git .
 
 # (Alternative) Reset remote to your own repo:
 git remote remove origin
-git remote add origin <repo-url>
+git remote add origin YOUR_REPO_URL
 
 # 1. Install dependencies
 pnpm install
@@ -51,7 +51,10 @@ pnpm dev
 
 Server runs at `http://localhost:3000/api/v1` by default.
 
-- `GET  /api/v1/health` — sanity check
+- `GET  /api/v1/health` — liveness probe (always returns 200)
+- `GET  /api/v1/ready` — readiness probe (checks database connection)
+- `GET  /api/v1/docs` — interactive API reference (Scalar)
+- `GET  /api/v1/openapi.json` — raw OpenAPI spec
 - `POST /api/v1/users/register`
 - `POST /api/v1/users/login`
 - `GET  /api/v1/users/me` — requires `Authorization: Bearer <token>`

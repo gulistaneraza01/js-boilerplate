@@ -21,7 +21,7 @@ if (env.nodeEnv === 'development') {
 }
 
 // --- API docs ---
-app.use('/api/v1/openapi.json', (req, res) => res.json(swaggerSpec));
+app.get('/api/v1/openapi.json', (req, res) => res.json(swaggerSpec));
 app.use('/api/v1/docs', apiReference({ url: '/api/v1/openapi.json' }));
 
 // --- Routes ---

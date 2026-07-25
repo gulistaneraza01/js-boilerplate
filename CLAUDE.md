@@ -115,10 +115,13 @@ Reusable Node.js + Express 5 (ESM) backend boilerplate. Layered architecture: `r
 
 ## Server
 
-Default URL: `http://localhost:5000/api/v1`
+Default URL: `http://localhost:3000/api/v1`
 
 Endpoints (examples):
-- `GET  /api/v1/health`
+- `GET  /api/v1/health` — liveness probe
+- `GET  /api/v1/ready` — readiness probe (checks DB)
+- `GET  /api/v1/docs` — Scalar API reference
+- `GET  /api/v1/openapi.json` — raw OpenAPI spec
 - `POST /api/v1/users/register`
 - `POST /api/v1/users/login`
 - `GET  /api/v1/users/me` (Bearer token)

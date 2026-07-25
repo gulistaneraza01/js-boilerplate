@@ -8,7 +8,10 @@ const options = {
       version: '1.0.0',
     },
     servers: [
-      { url: 'http://localhost:3000/api/v1', description: 'Development' },
+      {
+        url: process.env.API_BASE_URL ?? '/api/v1',
+        description: 'Current environment',
+      },
     ],
     components: {
       securitySchemes: {

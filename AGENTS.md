@@ -4,14 +4,15 @@ Behavioral guidelines in `CLAUDE.md`. This file adds repo-specific facts an agen
 
 ## Commands
 
-| Action | Command | Note |
-|---|---|---|
-| Dev server | `pnpm dev` | nodemon, watches `src/` |
-| Prisma generate | `pnpm prisma:generate` | After schema changes |
-| Prisma migrate (dev) | `pnpm prisma:migrate` | |
-| Prisma Studio | `pnpm prisma:studio` | |
-| Seed database | `pnpm exec node prisma/seed.js` | Not in scripts — run manually |
-| Commit | `git commit` | commitlint enforced via husky commit-msg hook |
+| Action               | Command                                  | Note                                               |
+| -------------------- | ---------------------------------------- | -------------------------------------------------- |
+| Dev server           | `pnpm dev`                               | nodemon, watches `src/`                            |
+| Prisma generate      | `pnpm prisma:generate`                   | After schema changes                               |
+| Prisma migrate (dev) | `pnpm prisma:migrate`                    |                                                    |
+| Prisma Studio        | `pnpm prisma:studio`                     |                                                    |
+| Seed database        | `pnpm exec node prisma/seed.js`          | Not in scripts — run manually                      |
+| API docs             | `open http://localhost:3000/api/v1/docs` | Scalar API reference (while dev server is running) |
+| Commit               | `git commit`                             | commitlint enforced via husky commit-msg hook      |
 
 Pre-commit hook is empty — no lint/format runs on commit.
 
@@ -26,6 +27,7 @@ Pre-commit hook is empty — no lint/format runs on commit.
 - Prisma config is in `prisma.config.ts` (Prisma 7 `defineConfig` API), not in `package.json`.
 - Default port is **3000** (`config/env.js` and `.env.example` agree).
 - `asyncHandler` wrapper is used on routes but is technically optional with Express 5 (kept for clarity).
+- API docs generated via `swagger-jsdoc` from `@openapi` YAML comments in route files. Served by `@scalar/express-api-reference` at `/api/v1/docs`. Spec config is in `src/config/swagger.js`.
 
 ## Constraints
 
