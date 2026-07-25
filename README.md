@@ -30,7 +30,7 @@ git clone https://github.com/gulistaneraza01/testing-codingg.git .
 
 # (Alternative) Reset remote to your own repo:
 git remote remove origin
-git remote add origin https://github.com/gulistaneraza01/testing-codingg.git
+git remote add origin <repo-url>
 
 # 1. Install dependencies
 pnpm install
