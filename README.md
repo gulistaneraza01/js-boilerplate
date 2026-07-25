@@ -26,7 +26,7 @@ prisma/
 
 ```bash
 # Clone the repo
-git clone https://github.com/gulistaneraza01/testing-codingg.git .
+git clone https://github.com/gulistaneraza01/js-boilerplate.git .
 
 # (Alternative) Reset remote to your own repo:
 git remote remove origin
