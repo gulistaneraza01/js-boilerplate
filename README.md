@@ -42,7 +42,7 @@ pnpm dev
 
 > Requires pnpm installed globally: `npm install -g pnpm` (or `corepack enable` on Node 16.13+, since `packageManager` is already pinned in `package.json`).
 
-Server runs at `http://localhost:5000/api/v1` by default.
+Server runs at `http://localhost:3000/api/v1` by default.
 
 - `GET  /api/v1/health` — sanity check
 - `POST /api/v1/users/register`

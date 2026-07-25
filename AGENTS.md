@@ -24,7 +24,7 @@ Pre-commit hook is empty — no lint/format runs on commit.
 - `src/repositories/` is empty scaffold. Leave empty unless unit tests need mocked DB.
 - Database is optional. Delete `prisma/`, `src/config/db.js`, and its imports to run standalone.
 - Prisma config is in `prisma.config.ts` (Prisma 7 `defineConfig` API), not in `package.json`.
-- Default port is **5000** (from `config/env.js`). `.env.example` shows `PORT=3000` — actual code defaults differ.
+- Default port is **3000** (`config/env.js` and `.env.example` agree).
 - `asyncHandler` wrapper is used on routes but is technically optional with Express 5 (kept for clarity).
 
 ## Constraints
